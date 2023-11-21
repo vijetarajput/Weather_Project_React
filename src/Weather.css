@@ -1,0 +1,32 @@
+.weather {
+  border: 2px solid black;
+  color: rgb(135, 135, 135);
+  margin: 10px auto;
+  padding: 16px;
+  max-width: 600px;
+}
+.form-input {
+  width: 82%;
+}
+.weather h1 {
+  color: #878787;
+  font-size: 24px;
+  font-weight: 100%;
+  height: 28px;
+  line-height: 29px;
+}
+h2 {
+  display: inline;
+}
+.celcius {
+  display: inline;
+  position: relative;
+  top: -10px;
+}
+ul {
+  margin: 0;
+  padding: 0 0 0 18px;
+}
+li {
+  list-style: none;
+}
