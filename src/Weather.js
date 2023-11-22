@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./Weather.css";
 import axios from "axios";
+import "./Weather.css";
 import WeatherData from "./WeatherData";
 
 export default function Weather(props)
@@ -17,7 +17,8 @@ export default function Weather(props)
                 temperature: response.data.main.temp,
                 date: new Date(response.data.dt*1000),
                 description: response.data.weather[0].description,
-                iconUrl:`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+                icon: response.data.weather[0].icon,
+                // `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
                 percipitation: "15",
                 humidity: response.data.main.humidity,
                 wind: response.data.wind.speed,
@@ -40,7 +41,14 @@ export default function Weather(props)
     function onSearchEvent(event)
     {
         event.preventDefault();
+        if(city)
+        {        
         searchCity();
+        }
+        else
+        {
+            alert("Please enter city name");
+        }
     }
     if(weather.ready)
     {
