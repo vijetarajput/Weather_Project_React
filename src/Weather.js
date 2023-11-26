@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherData from "./WeatherData";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props)
 {
@@ -22,7 +23,9 @@ export default function Weather(props)
                 percipitation: "15",
                 humidity: response.data.main.humidity,
                 wind: response.data.wind.speed,
-                ready:true
+                ready:true,
+                lon: response.data.coord.lon,
+                lat: response.data.coord.lat,
             }
         );
     }
@@ -59,6 +62,7 @@ export default function Weather(props)
                 <input type="submit" value="Submit" className="btn btn-primary ms-2"/>
             </form>
             <WeatherData weather={weather}/>
+            <WeatherForecast weather={weather}/>
        </div>
     );
     }

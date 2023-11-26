@@ -21,7 +21,6 @@ export default function WeatherTemperature(props)
     {
         return (props.celsius*9/5)+32;
     }
-    
     if(unit==="celsius")
     {
         return(
